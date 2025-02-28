@@ -1,19 +1,19 @@
-package africa.semicolon;
+package africa.semicolon.annotatedMethods;
 
-
-import africa.semicolon.services.CommentService;
+import africa.semicolon.LoggingAspect;
+import africa.semicolon.annotatedMethods.services.CommentServices;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan(basePackageClasses = {CommentService.class})
+@ComponentScan(basePackageClasses = {CommentServices.class})
 @EnableAspectJAutoProxy
-public class AppConfig {
+public class ProjectConfig {
 
     @Bean
-    public LoggingAspect loggingAspect(){
+    public africa.semicolon.LoggingAspect loggingAspect(){
         return new LoggingAspect();
     }
 }
